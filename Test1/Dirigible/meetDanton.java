@@ -17,7 +17,6 @@ public class meetDanton {
 		boolean answers = false;
 		
 		do{
-		
 		String opResponses = (String) JOptionPane.showInputDialog(null, "Questions?", null, JOptionPane.QUESTION_MESSAGE,null, opAnswers, opAnswers[0]);
 		
 		if (opResponses == "What is an operation?"){
@@ -30,7 +29,7 @@ public class meetDanton {
 		if (opResponses == "What are the results of an operation?") {
 			
 			System.out.println("Danton: If you successfully complete the mission, the ship may get water, food, or raw materials. Cool items may also be found planetside");
-			System.out.println("Whenever you fail or pass an operation, however, your ship's food, water, and fuel supply diminish.");
+			System.out.println("Whether you fail or pass an operation, however, your ship's food, water, and fuel supply diminish.");
 			answers = false;
 			
 		}
@@ -38,10 +37,25 @@ public class meetDanton {
 		if (opResponses == "Nothing.")
 		
 			answers = true;
-			
-		}while (answers = false);
+		
+		}while (answers == false);
+		
+		
+		System.out.println("Danton: Very well sir.");
+		System.out.println("Danton: Scanners indicate a hostile presence in the area. ");
+		System.out.println("Danton: Don't worry about getting shot too much, our med bay should patch you up so long as you aren't dead.");
+		System.out.println("I'll head around, you hold guard.");
+		System.out.println();
+		System.out.println("The ensuing, somber silence is shaken by a sniper shot");
+		System.out.println();
+		System.out.println("Raider: Let's see what you're made of!");
+		
+		int enemyhealth = 30;
+		int health = 100;
+		boolean cantFlee = false;
+		
+		combat.battle(health, enemyhealth,cantFlee);
 	}
-
 }
 
 

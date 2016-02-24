@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class waterShortage {
 
-public static void main(String[] args) throws InterruptedException{
+public static void water(String[] args) throws InterruptedException{
 	
 	int waterShortageBegin = JOptionPane.showConfirmDialog(null, "Captain, we are low on water. Do you want to go landside and find some?");
 	
@@ -43,7 +43,7 @@ public static void main(String[] args) throws InterruptedException{
 	    	Thread.sleep(1000);
 	    	System.out.println("Danton: Surely we can reach a compromise.");
 	    	Thread.sleep(1000);
-	    	System.out.println("Colonel Howards: There is water under raider control down a bit. We can't spare the forces, so if you wish to help...");
+	    	System.out.println("Colonel Howards: There is water under raider control down a bit. We can't spare the forces, but if you wish to help...");
 	    	Thread.sleep(2000);
 	    	
 	    	String[] howardsResponse = {"We'll help with those raiders", "Sorry, not today", "I know someone else I can fight..."};

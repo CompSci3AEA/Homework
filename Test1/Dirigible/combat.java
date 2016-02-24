@@ -4,78 +4,46 @@ import javax.swing.JOptionPane;
 
 public class combat {
 
-	public static void battle(int enemyHealth, int health, int cantFlee) {
+	public static void battle(int health, int enemyHealth, boolean cantFlee) {
 		// TODO Auto-generated method stub
-		
 		do{
+			int cover = 0;
+			boolean fleeOption = cantFlee;
+			playerTurn(health, enemyHealth, fleeOption);
+		}while (health > 0 && enemyHealth > 0);
+	}
 			
-			do{
-				
-				boolean endTurn = false;
-				
-				String [] combatChoices = {"Shoot", "Take cover", "Flee"};
-				String battleSequence = (String) JOptionPane.showInputDialog(null, "Combat!", null, JOptionPane.QUESTION_MESSAGE, null, combatChoices, combatChoices[0]);
-			
-				if (battleSequence == "Shoot"){
-				
-					int damage = (int)(Math.random()*10);
-					
-					enemyHealth = enemyHealth - damage;
-					
-				}
-			
-				if (battleSequence == "Take cover"){
-					
-					boolean cover = true;
-					enemyMove(cover);
-					
-				}
-					
-				
-					
-			
-				if (battleSequence == "Flee"){
-					if (cantFlee == 0) {
-					
-						endTurn = false;
-						
-					}
-					
-					else {
-						
-					}
-				
-				}while(endTurn = false);
-				
-			}while (enemyHealth > 0 && health > 0);
-			
+	public static int playerTurn(int health, int enemyHealth, boolean fleeOption){
 		
-		}
+
+		do{
+			String [] combatOptions = {"Attack","Take Cover", "Flee"};
+			String playerMove = (String) JOptionPane.showInputDialog(null, "Combat plan", null, JOptionPane.QUESTION_MESSAGE, null, combatOptions, combatOptions[0]);
 		
-		public static void enemyMove(boolean cover, int health) {
-			
-			int enemyPlan = (int)(Math.random()*20);
-			
-			if (enemyPlan >= 0 && enemyPlan <= 9) {
+			if (playerMove == "Attack"){
 				
-				System.out.println("The enemy takes cover");
-				
-				return;
+				int damage = (int)(Math.random()*10);
+				enemyHealth = enemyHealth - damage;
+				System.out.println("Enemy has taken " + damage + "! Current health is " + enemyHealth);
 				
 			}
+		
+			if (playerMove == "Take Cover"){
 			
-			if (enemyPlan > 9) {
-				
-				int enemyDamage = (int) (Math.random()*5);
-				
-				health = health - enemyDamage;
-				
-				System.out.println("Your health is now " + health);
-				
-				return;
-			}
+
 				
 			}
+		
+			if (playerMove == "Flee"){
 			
-		}
+			}
+		}while(fleeOption == false);
+		
+		return enemyHealth;
+		
+	}
+	
+	public static void enemyTurn(int health, int enemyHealth, boolean fleeOption, int cover){
+		
+	}
 }

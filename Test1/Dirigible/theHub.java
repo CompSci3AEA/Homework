@@ -15,14 +15,15 @@ public class theHub {
 		System.out.println("But, resources now run low, and you must return to the surface. Good luck, Captain");
 		Thread.sleep(2000);
 		
-		for (int i = 0; i < 5; i++);
+		for (int i = 0; i < 5; i++) {
 			int random = (int)(Math.random()*20);
 			partOne(random);
+		}
 		
 	}
 		
 		
-		public static void tutorial() throws InterruptedException{
+		/**public static void tutorial() throws InterruptedException{
 			String[] opChoices = {"Run an operation", "Stats"};
 			String opDecision = (String) JOptionPane.showInputDialog(null, "Operation?", null, JOptionPane.QUESTION_MESSAGE, null, opChoices, opChoices[0]);
 		
@@ -33,7 +34,7 @@ public class theHub {
 			
 			if (opDecision == "Stats") { 
 			}
-		}
+		}*/
 		
 		
 		
@@ -47,9 +48,9 @@ public class theHub {
 			
 				if (opDecision == "Run an operation"){
 					
-					if (random == 0) {
-					waterShortage.main(opChoices);
-					}
+					//if (random == 0) {
+					waterShortage.water(opChoices);
+					//}
 					
 
 				}
@@ -60,5 +61,9 @@ public class theHub {
 			
 			
 	}
+		public static void statListing() {
+
+			
+		}
 
 }
